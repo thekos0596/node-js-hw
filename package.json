@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemom index.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
+  "private": "true",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.22"
