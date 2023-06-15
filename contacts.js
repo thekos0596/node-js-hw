@@ -1,11 +1,15 @@
 const fs = require("fs").promises;
+const { isUtf8 } = require("buffer");
+const { log } = require("console");
 const path = require("path");
 
-const contactsPath = path.join("__dirname", "contacts.json");
+const contactsPath = path.join(__dirname, "./db/contacts.json");
 
-// function listContacts = async () => {
-//   const dataString = await fs.readfil
-// }
+const listContacts = async () => {
+  const dataString = await fs.readFile(contactsPath, "utf8");
+  const data = JSON.parse(dataString);
+  return data;
+};
 
 // function getContactById(contactId) {
 //   // ...твой код
@@ -19,6 +23,6 @@ const contactsPath = path.join("__dirname", "contacts.json");
 //   // ...твой код
 // }
 
-// module.exports = {
-//   listContacts,
-// };
+module.exports = {
+  listContacts,
+};
